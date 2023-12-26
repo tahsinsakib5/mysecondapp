@@ -4,8 +4,9 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:mysecondapp/mainhomepage.dart';
 
-import 'home.dart';
+
 void main()async{
 
     WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +22,7 @@ void main()async{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      home: generatorpage(),
     );
   }
 }

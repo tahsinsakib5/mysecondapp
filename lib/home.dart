@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors, override_on_non_overriding_member
 
 
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:mysecondapp/allquiz.dart';
 import 'package:mysecondapp/mainquize.dart';
@@ -10,7 +12,8 @@ import 'package:hive/hive.dart';
 
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  final List lists;
+  const HomePage({super.key, required this.lists});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -42,7 +45,8 @@ class _HomePageState extends State<HomePage> {
   }
     
     var resultList = allresult?.values.toList();
-
+    Random random=Random();
+    
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +66,7 @@ class _HomePageState extends State<HomePage> {
                         style: TextStyle(fontSize: 20),
                       ),
                       MainQuiz(
-                        answerlist: allQuiz[index].answerList,
+                        answerlist:allQuiz[index].answerList,
                       ),
                     ],
                   ),
